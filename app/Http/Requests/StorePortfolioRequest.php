@@ -27,7 +27,8 @@ class StorePortfolioRequest extends FormRequest
             'name' =>'required|max:255',
             'description' =>'nullable',
             'start_date' => 'required|date',
-            'image' => 'nullable|mimes:jpeg,png,jpg,gif,svg|image|max:2048'
+            'image' => 'nullable|mimes:jpeg,png,jpg,gif,svg|image|max:2048',
+            'type_id' => 'nullable|exists:types,id',
         ];
     }
     public function messages(){

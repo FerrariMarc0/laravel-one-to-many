@@ -8,6 +8,7 @@ use App\Http\Requests\StorePortfolioRequest;
 use App\Http\Requests\UpdatePortfolioRequest;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Type;
 
 class PortfolioController extends Controller
 {
@@ -29,7 +30,8 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        return view('admin.portfolios.create');
+        $types = Type::all();
+        return view('admin.portfolios.create', compact('types'));
     }
 
     /**

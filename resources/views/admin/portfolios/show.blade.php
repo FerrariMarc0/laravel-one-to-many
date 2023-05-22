@@ -3,6 +3,7 @@
 @section('content')
     <div class="container">
         <h1 class="my-4 text-center">{{$portfolio->name}}</h1>
+        <h2>Tipo: {{ $portfolio->type?->name ?: 'Nessun tipo'}}</h2>
 
         <div class="card w-75 m-auto">
             <img src="{{ asset('storage/' . $portfolio->image) }}" alt="{{ $portfolio->name }}">
